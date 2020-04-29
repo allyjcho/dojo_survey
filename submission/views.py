@@ -5,11 +5,12 @@ def index(request):
 
 def process(request):
     if request.method == 'POST':
-        context = {
+        content = {
             'name': request.POST['name'],
             'loc': request.POST['location'],
             'lang': request.POST['language'],
+            'sex': request.POST['gender'],
             'com': request.POST['comment'],
         }
-        return render(request,'result.html', context)
+        return redirect('/result')
     return render(request, 'result.html')
