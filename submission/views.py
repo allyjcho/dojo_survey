@@ -3,13 +3,13 @@ from django.shortcuts import render, redirect
 def index(request):
     return render(request, 'index.html')
 
-def result(request):
-    if request.method == "POST":
-        context={
-            'name' = request.POST["name"]
-            'location' = request.POST["location"]
-            'language' = request.POST["language"]
-            'comment' = request.POST["comment"]
+def process(request):
+    if request.method == 'POST':
+        context = {
+            'name': request.POST['name'],
+            'loc': request.POST['location'],
+            'lang': request.POST['language'],
+            'com': request.POST['comment'],
         }
-        return render(request, 'results.html, context')
-    return render(request, 'results.html')
+        return render(request,'result.html', context)
+    return render(request, 'result.html')

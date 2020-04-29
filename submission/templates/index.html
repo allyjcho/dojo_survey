@@ -8,34 +8,51 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    
-<form action="/index" method="POST" action="http://127.0.0.1:8000/">
-
+    <h1>FILL ME OUT</h1>
+    <form action="/process" method="POST">
     {% csrf_token %}
-    
-    <p>Your Name: <input name="name" type="text"></p>
-    
-    <p>Dojo Location: <select name="location" id="location">
-    <option value="san_jose" name="location">San Jose</option>
-    <option value="chicago" name="location">Chicago</option>
-    <option value="san_francisco" name="location">San Francisco</option>
-    </select></p>
-    
-    <p>Favorite Language:</p>
-    <input type="radio" id="python" name="language" value="python">
-    <label for="python">Python</label><br>
-    <input type="radio" id="javascript" name="language" value="javascript">
-    <label for="javascript">JavaScript</label><br>
-    <input type="radio" id="sql" name="language" value="sql">
-    <label for="sql">SQL</label>
-    
-    <p>Comment (optional): </p>
-    
-    <textarea name="comment" id="comment" value="ccomment" cols="50" rows="10"></textarea><br>
-    
-    <a href="http://127.0.0.1:8000/result" input type="submit" value="submit">Submit</a>
 
-    
+        <p>Name: <input type="text" name="name"></p>
+
+        <p>Dojo Locations: <select name="location">
+            <option value="chicago">Chicago, IL</option>
+            <option value="sanjose">San Jose, CA</option>
+            <option value="seattle">Seattle, WA</option>
+            <option value="boise">Boise, WA</option>
+            <option value="tulsa">Tulsa, OK</option>
+            <option value="berkley">Berkley, CA</option>
+            <option value="burbank">Burbank, CA</option>
+            <option value="oc">Orange County, CA</option>
+            <option value="dallas">Dallas, TX</option>
+            <option value="arlington">Arlington, VA</option>
+            <option value="online">Online</option>
+        </select></p>
+
+        <p>Favorite Languages:</p>
+        <input type="checkbox" name="language" id="css" value="css">
+        <label for="css">CSS</label><br>
+        <input type="checkbox" name="language" id="html" value="html">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" name="language" id="java" value="java">
+        <label for="java">Java</label><br>
+        <input type="checkbox" name="language" id="js" value="js">
+        <label for="js">JavaScript</label><br>
+        <input type="checkbox" name="language" id="python" value="python">
+        <label for="python">Python</label>
+
+        <p>Gender:</p>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" name="gender" id="neither" value="neither">
+        <label for="neither">Neither</label>
+
+        <p>Comment (optional): </p>
+        <p><textarea name="comment" value="comment" id="comment" cols="50" rows="10"></textarea></p>
+
+        <input type="submit" value="submit">
+
     </form>
 </body>
 </html>
